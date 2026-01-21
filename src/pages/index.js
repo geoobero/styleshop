@@ -9,8 +9,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <div className="min-h-screen bg-gray-50 pt-24">
+      <div className='fixed top-0 w-full'>
+        <Navbar />
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-gray-500 to-gray-700 text-white py-20">

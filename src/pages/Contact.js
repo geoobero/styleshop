@@ -24,8 +24,10 @@ export default function Contact() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            <Navbar />
+        <div className="min-h-screen bg-gray-50 pt-24">
+            <div className='fixed top-0 w-full'>
+                <Navbar />
+            </div>
 
             {/* Contact Hero */}
             <section className="bg-white py-16">
