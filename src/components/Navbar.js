@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className='flex justify-around items-center p-6 bg-white shadow-md border-b border-gray-100'>
       <div className='text-2xl font-bold text-orange-600'>
-        <Link href="/">
+        <Link href="/" className='lg:block md:block sm:block hidden'>
           StyleShop
         </Link>
       </div>
