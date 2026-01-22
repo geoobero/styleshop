@@ -61,14 +61,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50 ">
-      <div className='fixed top-0 w-full z-30'>
+      <div className='fixed top-0 w-full z-60'>
         <Navbar cartCount={cart.reduce((total, item) => total + item.quantity, 0)} />
       </div>
 
       {/* Hero Section */}
       <main>
-        <div class="h-screen flex items-center justify-items-center bg-amber-500 relative overflow-hidden">
-          <div class="container mx-auto flex relative py-16">
+        <div class="bg-[url('https://images.unsplash.com/photo-1561715276-a2d087060f1d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]
+          bg-cover bg-bottom w-full lg:h-screen md:h-200 h-130 flex items-center justify-items-center bg-amber-500 relative overflow-hidden">
+          {/* <div class="container mx-auto flex relative py-16">
             <div class="sm:w-3/6 lg:w-3/5 flex flex-col relative z-20">
               <h1 class="font-sans font-black font-semibold leading-snug text-gray-800 text-white
              text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
@@ -128,14 +129,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <a href="https://discord.gg/95CveWrbK8"
           target="_blank"
           rel="noopener"
-          class="absolute bottom-4 right-4 flex items-center gap-2 text-white px-4 py-2 rounded-full shadow-lg hover:bg-indigo-500 transition-all duration-300 z-50 backdrop-blur-md">
-          <span class="text-sm font-medium">Made by Chandrika</span>
+          class="absolute bottom-4 right-4 flex items-center gap-2 text-white px-5 py-3 rounded-full shadow-lg hover:bg-indigo-500 transition-all duration-300 z-50 backdrop-blur-md">
+          <span class="text-sm font-medium">Made by Geo</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240" class="w-5 h-5 fill-white">
             <path d="M104.4 104.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zm36.2 0c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" />
             <path d="M189.5 20h-134C34.3 20 20 34.3 20 52.5v135c0 18.2 14.3 32.5 32.5 32.5h113.4l-5.3-18.3 12.8 11.8 12.1 11.1 21.6 19V52.5c-.1-18.2-14.4-32.5-32.6-32.5zM163 155s-4.6-5.5-8.4-10.3c16.7-4.7 23.1-15.1 23.1-15.1-5.2 3.4-10.1 5.8-14.5 7.4-6.3 2.7-12.4 4.4-18.3 5.4-12.1 2.3-23.2 1.7-32.8-.1-7.2-1.4-13.5-3.4-18.7-5.4-2.9-1.1-6-2.4-9.1-4.1-.4-.2-.8-.3-1.1-.5-.3-.1-.4-.2-.6-.3-2.7-1.5-4.1-2.5-4.1-2.5s6.1 10.2 22.2 15c-3.8 4.8-8.5 10.6-8.5 10.6-28.1-.9-38.8-19.4-38.8-19.4 0-41.1 18.4-74.5 18.4-74.5 18.4-13.8 35.9-13.4 35.9-13.4l1.3 1.6c-23 6.6-33.7 16.5-33.7 16.5s2.8-1.5 7.5-3.5c13.6-5.9 24.4-7.5 28.9-7.9.7-.1 1.3-.2 2-.2 7.1-.9 15.2-1.2 23.5-.2 11 1.3 22.8 4.5 34.9 11.1 0 0-10.1-9.6-31.9-16.2l1.8-2.1s17.5-.4 35.9 13.4c0 0 18.4 33.4 18.4 74.5 0 .1-10.8 18.6-38.9 19.5z" />
