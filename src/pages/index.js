@@ -60,17 +60,17 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24">
-      <div className='fixed top-0 w-full z-10'>
+    <div className="min-h-screen bg-gray-50 ">
+      <div className='fixed top-0 w-full z-30'>
         <Navbar cartCount={cart.reduce((total, item) => total + item.quantity, 0)} />
       </div>
 
       {/* Hero Section */}
       <main>
-        <div class="h-screen flex items-center justify-items-center bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+        <div class="h-screen flex items-center justify-items-center bg-amber-500 relative overflow-hidden">
           <div class="container mx-auto flex relative py-16">
             <div class="sm:w-3/6 lg:w-3/5 flex flex-col relative z-20">
-              <h1 class="font-sans font-black font-semibold leading-snug text-gray-800 dark:text-white
+              <h1 class="font-sans font-black font-semibold leading-snug text-gray-800 text-white
              text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">
                 Welcome to the <br />
                 <span class="font-light italic">
@@ -78,7 +78,7 @@ export default function Home() {
                 </span> oasis
               </h1>
 
-              <p class="text-xs sm:text-sm md:text-base lg:text-lg mt-4 sm:mt-6 text-gray-700 dark:text-white max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-1/2">
+              <p class="text-xs sm:text-sm md:text-base lg:text-lg mt-4 sm:mt-6 text-gray-700 text-white max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-1/2">
                 Step into our innovation oasis, where groundbreaking ideas bloom, and every click is a step into a world of
                 endless possibilities.
               </p>
@@ -88,7 +88,7 @@ export default function Home() {
                 <a href="#" class="py-2 px-4 sm:py-3 sm:px-6 rounded-xl shadow-lg bg-black border-2 border-transparent text-white text-xs sm:text-sm hover:bg-gray-700">
                   Get Started
                 </a>
-                <a href="#" class="py-2 px-4 sm:py-3 sm:px-6 rounded-xl shadow-lg bg-transparent border-2 border-black hover:border-gray-700 text-black dark:text-white text-xs sm:text-sm hover:text-gray-700">
+                <a href="#" class="py-2 px-4 sm:py-3 sm:px-6 rounded-xl shadow-lg bg-transparent border-2 border-black hover:border-gray-700 text-black text-white text-xs sm:text-sm hover:text-gray-700">
                   Watch Demo
                 </a>
               </div>
