@@ -100,41 +100,32 @@ export default function Contact() {
 
                         {/* Contact Information */}
                         <div className="space-y-8">
-                            <div>
+                            <div className=''>
                                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h2>
                                 <div className="space-y-4">
                                     <div className="flex items-start space-x-4">
-                                        <div className="bg-teal-100 p-3 rounded-full">
-                                            <span className="text-teal-600">📍</span>
-                                        </div>
                                         <div>
                                             <h3 className="font-semibold text-gray-800">Address</h3>
                                             <p className="text-gray-600">123 Commerce Street<br />City, State 12345</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start space-x-4">
-                                        <div className="bg-teal-100 p-3 rounded-full">
-                                            <span className="text-teal-600">📞</span>
-                                        </div>
                                         <div>
                                             <h3 className="font-semibold text-gray-800">Phone</h3>
                                             <p className="text-gray-600">+1 (555) 123-4567</p>
                                         </div>
                                     </div>
                                     <div className="flex items-start space-x-4">
-                                        <div className="bg-teal-100 p-3 rounded-full">
-                                            <span className="text-teal-600">✉️</span>
-                                        </div>
                                         <div>
                                             <h3 className="font-semibold text-gray-800">Email</h3>
-                                            <p className="text-gray-600">support@styleshop.com</p>
+                                            <p className="text-gray-600">support-styleshop@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Business Hours */}
-                            <div className="bg-teal-50 p-6 rounded-lg">
+                            <div className="bg-amber-50 p-6 rounded-lg">
                                 <h3 className="text-lg font-semibold text-gray-800 mb-4">Business Hours</h3>
                                 <div className="space-y-2 text-gray-600">
                                     <div className="flex justify-between">

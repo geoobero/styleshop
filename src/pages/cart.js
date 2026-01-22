@@ -8,7 +8,7 @@ export default function MyCart() {
             </div>
 
             <div className=''>
-
+                
             </div>
         </section>
     )

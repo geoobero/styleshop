@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link href="/Contact" className='text-gray-700 hover:text-teal-600 font-medium transition duration-300'>
           Contact
         </Link>
-        <Link href="/cart"><img src="/images/shopping-cart.png" width={46} height={46} alt='shopping-cart'
+        <Link href="/cart"><img src="/images/shopping-cart.png" width={40} height={40} alt='shopping-cart'
               className='hover:bg-amber-200 p-2 rounded-xl duration-300'
         /></Link>
       </div>
