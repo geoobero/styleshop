@@ -8,14 +8,14 @@ export default function Navbar({ cartCount = 0 }) {
           StyleShop
         </Link>
       </div>
-      <div className='flex gap-8 items-center'>
-        <Link href="/" className='text-black hover:text-teal-600 font-medium transition duration-300'>
+      <div className='flex gap-5 items-center'>
+        <Link href="/" className='text-black hover:bg-slate-800 hover:text-white px-4 py-1 rounded-full font-medium transition duration-300'>
           Home
         </Link>
-        <Link href="/About" className='text-black hover:text-teal-600 font-medium transition duration-300'>
+        <Link href="/About" className='text-black hover:bg-slate-800 hover:text-white px-4 py-1 rounded-full font-medium transition duration-300'>
           About
         </Link>
-        <Link href="/Contact" className='text-black hover:text-teal-600 font-medium transition duration-300'>
+        <Link href="/Contact" className='text-black hover:bg-slate-800 hover:text-white px-4 py-1 rounded-full font-medium transition duration-300'>
           Contact
         </Link>
         <Link href="/cart" className="relative">
