@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Navbar() {
+export default function Navbar({ cartCount = 0 }) {
   return (
     <nav className='flex justify-around items-center p-6 bg-white shadow-md border-b border-gray-100'>
       <div className='text-2xl font-bold text-orange-600'>
@@ -18,9 +18,22 @@ export default function Navbar() {
         <Link href="/Contact" className='text-gray-700 hover:text-teal-600 font-medium transition duration-300'>
           Contact
         </Link>
-        <Link href="/cart"><img src="/images/shopping-cart.png" width={40} height={40} alt='shopping-cart'
+        <Link href="/cart" className="relative">
+          <span className="relative inline-block">
+            <img
+              src="/images/shopping-cart.png"
+              width={40}
+              height={40}
+              alt='shopping-cart'
               className='hover:bg-amber-200 p-2 rounded-xl duration-300'
-        /></Link>
+            />
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                {cartCount}
+              </span>
+            )}
+          </span>
+        </Link>
       </div>
     </nav>
   );

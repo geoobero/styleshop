@@ -1,4 +1,7 @@
 import Navbar from '@/components/Navbar';
+import CartModal from '@/components/cartModal';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const featuredProducts = [
@@ -8,10 +11,58 @@ export default function Home() {
     { id: 4, name: "Phone Case", price: "$24.99", image: "https://images.unsplash.com/photo-1593055454503-531d165c2ed8?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhvbmUlMjBjYXNlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600" }
   ];
 
+  const [showCartModal, setShowCartModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cart, setCart] = useState([]);
+  const router = useRouter();
+
+  // Load cart from localStorage on component mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
+
+  const handleAddToCart = (product) => {
+    setSelectedProduct(product);
+    setShowCartModal(true);
+  };
+
+  const handleAddToCartConfirm = (product) => {
+    // Add to cart
+    const existingItem = cart.find(item => item.id === product.id);
+
+    if (existingItem) {
+      setCart(prevCart =>
+        prevCart.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCart(prevCart => [...prevCart, { ...product, quantity: 1 }]);
+    }
+
+    // Close modal
+    setShowCartModal(false);
+    setSelectedProduct(null);
+  };
+
+  const goToCart = () => {
+    router.push('/cart');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 pt-24">
       <div className='fixed top-0 w-full'>
-        <Navbar />
+        <Navbar cartCount={cart.reduce((total, item) => total + item.quantity, 0)} />
       </div>
 
       {/* Hero Section */}
@@ -19,9 +70,6 @@ export default function Home() {
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl font-bold mb-6">Welcome to StyleShop</h1>
           <p className="text-xl mb-8 opacity-90">Discover amazing products at unbeatable prices</p>
-          <button className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 hover:text-white hover:shadow-lg cursor-pointer transition duration-300">
-            Shop Now
-          </button>
         </div>
       </section>
 
@@ -38,7 +86,10 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">{product.name}</h3>
                   <p className="text-teal-600 font-bold text-xl mb-4">{product.price}</p>
-                  <button className="w-full bg-amber-500 text-white py-2 rounded-lg hover:bg-white hover:text-amber-500 hover:border border cursor-pointer transition duration-300">
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="w-full bg-amber-500 text-white py-2 rounded-lg hover:bg-amber-400 cursor-pointer transition duration-300"
+                  >
                     Add to Cart
                   </button>
                 </div>
@@ -58,6 +109,16 @@ export default function Home() {
           Photo used from <a className="underline" href="https://unsplash.com">Unsplash.com</a>
         </div>
       </section>
+
+      <CartModal
+        isOpen={showCartModal}
+        onClose={() => {
+          setShowCartModal(false);
+          setSelectedProduct(null);
+        }}
+        product={selectedProduct}
+        onAddToCart={handleAddToCartConfirm}
+      />
     </div>
   )
 }
