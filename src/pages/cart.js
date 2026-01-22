@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function MyCart() {
     const [cartItems, setCartItems] = useState([]);
 
-    // Load cart from localStorage on component mount
+    // Load cart from localStorage
     useEffect(() => {
         const savedCart = localStorage.getItem('cart');
         if (savedCart) {
@@ -38,6 +38,12 @@ export default function MyCart() {
             return total + (price * item.quantity);
         }, 0);
     };
+
+    const handleCheckout = () => {
+        setCartItems([])
+        localStorage.removeItem('cart')
+        alert('Thank you for shopping with us!')
+    }
 
     return (
         <section className='min-h-screen bg-gray-50 pt-24'>
@@ -103,7 +109,7 @@ export default function MyCart() {
                                     ${calculateTotal().toFixed(2)}
                                 </span>
                             </div>
-                            <button className='w-full cursor-pointer bg-amber-500 text-white py-3 rounded-lg font-semibold hover:bg-amber-400 transition duration-300'>
+                            <button onClick={handleCheckout} className='w-full cursor-pointer bg-amber-500 text-white py-3 rounded-lg font-semibold hover:bg-amber-400 transition duration-300'>
                                 Checkout
                             </button>
                             <Link href="/" className='block text-center mt-4 text-amber-600 hover:text-amber-700'>
