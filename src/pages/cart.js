@@ -75,7 +75,7 @@ export default function MyCart() {
                                         <h3 className='text-lg font-semibold text-gray-800'>{item.name}</h3>
                                         <p className='text-teal-600 font-bold'>{item.price}</p>
                                     </div>
-                                    <div className='flex items-center space-x-4'>
+                                    <div className='lg:flex lg:flex-row flex md:flex-row flex-col items-center space-x-4 space-y-2'>
                                         <div className='flex items-center space-x-2'>
                                             <button
                                                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
