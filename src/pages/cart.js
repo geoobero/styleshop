@@ -1,36 +1,9 @@
 import Navbar from '@/components/Navbar';
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
 
 export default function MyCart() {
-    const [cartItems, setCartItems] = useState([]);
-
-    // Load cart from localStorage
-    useEffect(() => {
-        const savedCart = localStorage.getItem('cart');
-        if (savedCart) {
-            setCartItems(JSON.parse(savedCart));
-        }
-    }, []);
-
-    const updateQuantity = (id, newQuantity) => {
-        if (newQuantity < 1) {
-            removeFromCart(id);
-            return;
-        }
-
-        const updatedCart = cartItems.map(item =>
-            item.id === id ? { ...item, quantity: newQuantity } : item
-        );
-        setCartItems(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-    };
-
-    const removeFromCart = (id) => {
-        const updatedCart = cartItems.filter(item => item.id !== id);
-        setCartItems(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-    };
+    const { cartItems, updateQuantity, removeItem, clearCart } = useCart();
 
     const calculateTotal = () => {
         return cartItems.reduce((total, item) => {
@@ -40,15 +13,14 @@ export default function MyCart() {
     };
 
     const handleCheckout = () => {
-        setCartItems([])
-        localStorage.removeItem('cart')
+        clearCart();
         alert('Thank you for shopping with us!')
     }
 
     return (
         <section className='min-h-screen bg-gray-50 pt-24'>
             <div className='fixed top-0 w-full'>
-                <Navbar cartCount={cartItems.reduce((total, item) => total + item.quantity, 0)} />
+                <Navbar />
             </div>
 
             <div className='container mx-auto px-6 py-8 max-w-200'>
@@ -92,7 +64,7 @@ export default function MyCart() {
                                             </button>
                                         </div>
                                         <button
-                                            onClick={() => removeFromCart(item.id)}
+                                            onClick={() => removeItem(item.id)}
                                             className='px-3 py-2 bg-red-50 text-red-600 cursor-pointer rounded-lg hover:bg-red-100 hover:text-red-700'
                                         >
                                             Remove

@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
 
-export default function Navbar({ cartCount = 0 }) {
+export default function Navbar() {
+  const { cartCount } = useCart();
+
   return (
-    <nav className='flex justify-around items-center p-6 bg-white/20 backdrop-blur-md shadow-md'>
-      <div className='text-2xl font-bold text-orange-600'>
+      <nav className='flex justify-around items-center p-6 bg-white/20 backdrop-blur-md shadow-md'>
+      <div className='text-2xl font-bold text-black'>
         <Link href="/" className='lg:block md:block sm:block hidden'>
           StyleShop
         </Link>
@@ -35,6 +38,6 @@ export default function Navbar({ cartCount = 0 }) {
           </span>
         </Link>
       </div>
-    </nav>
+      </nav>
   );
 };
