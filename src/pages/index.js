@@ -38,7 +38,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/5" />
           <div className="relative z-10 w-full px-6">
             <div className="mx-auto max-w-6xl">
-              <div className="max-w-3xl pt-28 md:pt-25">
+              <div className="max-w-3xl lg:text-start md:text-start text-center pt-28 md:pt-25">
                 <h1 className="text-6xl leading-none text-white drop-shadow-[0_12px_30px_rgba(0,0,0,0.35)] sm:text-7xl md:text-8xl lg:text-[9rem]">
                   StyleShop
                 </h1>
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute right-4 bottom-128 z-50 flex cursor-pointer items-center gap-2 rounded-full px-5 py-3 text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-indigo-500 md:bottom-60 lg:bottom-4">
+        <div className="absolute right-4 lg:bottom-20 md:bottom-128 sm:bottom-50 bottom-50 z-50 flex cursor-pointer items-center gap-2 rounded-full px-5 py-3 text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-indigo-500 md:bottom-60 lg:bottom-4">
           <span className="text-sm font-medium">Made by Geo</span>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240" className="h-5 w-5 fill-white">
             <path d="M104.4 104.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zm36.2 0c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z" />
