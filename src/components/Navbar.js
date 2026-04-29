@@ -6,7 +6,7 @@ import { useCart } from '@/context/CartContext';
 export default function Navbar() {
   const { cartCount } = useCart();
   const router = useRouter();
-  const showSearch = router.pathname !== '/About' && router.pathname !== '/Contact';
+  const showSearch = router.pathname !== '/About' && router.pathname !== '/Contact' && router.pathname !== '/cart';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
