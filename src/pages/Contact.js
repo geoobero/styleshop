@@ -13,7 +13,7 @@ export default function Contact() {
     {
       id: 1,
       label: 'Email',
-      value: 'support-styleshop@gmail.com',
+      value: 'wryhtgeo@gmail.com',
       note: 'Best for project questions and support requests.',
     },
     {

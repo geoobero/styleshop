@@ -7,7 +7,7 @@ export default function MyCart() {
 
     const calculateTotal = () => {
         return cartItems.reduce((total, item) => {
-            const price = parseFloat(item.price.replace('$', ''));
+            const price = Number.parseFloat(String(item.price).replace(/[^0-9.]/g, ''));
             return total + (price * item.quantity);
         }, 0);
     };
@@ -27,7 +27,7 @@ export default function MyCart() {
                 {cartItems.length === 0 ? (
                     <div className='text-center py-12'>
                         <p className='text-gray-600 text-lg mb-4'>Your cart is empty</p>
-                        <Link href="/" className='text-amber-600 hover:text-amber-700 font-semibold'>
+                        <Link href="/products" className='text-amber-600 hover:text-amber-700 font-semibold'>
                             Continue Shopping →
                         </Link>
                     </div>
@@ -78,13 +78,13 @@ export default function MyCart() {
                             <div className='flex justify-between items-center mb-6'>
                                 <span className='text-lg font-semibold text-black font-semibold'>Total:</span>
                                 <span className='text-2xl font-bold text-teal-600'>
-                                    ${calculateTotal().toFixed(2)}
+                                    P{calculateTotal().toFixed(2)}
                                 </span>
                             </div>
                             <button onClick={handleCheckout} className='w-full cursor-pointer bg-amber-500 text-white py-3 rounded-lg font-semibold hover:bg-amber-400 transition duration-300'>
                                 Checkout
                             </button>
-                            <Link href="/" className='block text-center mt-4 text-amber-600 hover:text-amber-700'>
+                            <Link href="/products" className='block text-center mt-4 text-amber-600 hover:text-amber-700'>
                                 Continue Shopping
                             </Link>
                         </div>

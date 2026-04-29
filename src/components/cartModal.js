@@ -20,21 +20,21 @@ export default function CartModal({ isOpen, onClose, product, onAddToCart }) {
                             />
                         </div>
                         <div>
-                            <p className="text-teal-600 font-bold text-lg">{product.price}</p>
+                            <p className="text-slate-700 font-bold text-lg">{product.price}</p>
                         </div>
                     </div>
-                    <h3 className="font-semibold text-gray-800">{product.name}</h3>
+                    <h3 className="font-semibold text-gray-500">{product.name}</h3>
                     <div className="flex justify-end gap-2 mt-6">
                         <button
                             onClick={handleAdd}
-                            className="px-4 w-20 py-2 text-white bg-amber-500 
-                            hover:bg-amber-400 duration-300 cursor-pointer rounded"
+                            className="px-4 w-fit py-2 text-white bg-amber-500 
+                            hover:bg-amber-400 duration-300 cursor-pointer rounded-full"
                         >
-                            Add
+                            Add to cart
                         </button>
                         <button
                             onClick={onClose}
-                            className="px-4 w-20 py-2 text-red-500 hover:bg-red-50 duration-300 cursor-pointer bg-gray-100 rounded"
+                            className="px-4 w-20 py-2 text-red-500 hover:bg-red-50 duration-300 cursor-pointer border border-gray-200 rounded-full"
                         >
                             Cancel
                         </button>
