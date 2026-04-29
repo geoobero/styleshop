@@ -1,6 +1,7 @@
 import CartModal from '@/components/cartModal';
 import Navbar from '@/components/Navbar';
 import ProductGrid from '@/components/ProductGrid';
+import Footer from './Footer';
 import { products } from '@/data/products';
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
@@ -49,6 +50,8 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
 
       <CartModal
         isOpen={showCartModal}

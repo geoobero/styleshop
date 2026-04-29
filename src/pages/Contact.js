@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import { useState } from 'react';
 import Image from 'next/image';
+import Footer from './Footer';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -177,6 +178,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
