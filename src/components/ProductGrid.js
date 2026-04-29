@@ -1,6 +1,10 @@
+
+
+
 export default function ProductGrid({ products, onProductClick }) {
+ 
   return (
-    <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-2 lg:gap-5 gap-3 md:gap-5 md:grid-cols-3 lg:grid-cols-4">
       {products.map((product) => (
         <div
           key={product.id}
